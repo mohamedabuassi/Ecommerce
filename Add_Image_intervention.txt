@@ -1,0 +1,55 @@
+
+In Part 8, we are going to add product image from add product form. We will add product image name in database and image itself in some folder in images.
+
+We will resize the product image and then store in different folders.
+
+We will create products folder in images folder. And inside products folder, we will create 3 other folders :-
+
+Small Folder having small product images
+Medium Folder having medium product images
+Large Folder having large product images
+
+So basically we are going to add original size of product image in Large folder and then we will resize it to make medium as well as small.
+
+Suppose we have fixed to upload large image of size 1200 x 1200 then we resize it to medium image of size 600 x 600 and small image of size 300 x 300 that depends upon our requirement and design.
+
+But for resizing images, we need to first install Intervention package of Laravel.
+
+1) Install Intervention Package :-
+
+For resizing images, we will install Intervention package by giving below command :-
+
+composer.phar require intervention/image (For Windows)
+
+php composer.phar require intervention/image (For Other OS)
+
+2) Update add-product form :-
+
+We need to add enctype = "multipart/form-data" in form and also we will give image id and name.
+
+3) Add Validation for Image :-
+
+In matrix.form_validation.js, add validation for image as well.
+
+4) Check Intervention Package :-
+
+Check if Intervention package is installed or not. Open composer.json file and check intervention/image there. If its there, it means installation is fine.
+
+5) Add Headers :-
+
+Add below headers at the top of ProductsController.php :-
+
+ use Illuminate\Support\Facades\Input;
+ use Image;
+
+6) Create Images folders :-
+
+We need to create products folder under images folder. And in products folder, we will create small, medium and large folders for storing images after resize.
+
+7) Update addProduct function with Upload Image code :-
+
+See in video, we able to resize product original image of size 1200 x 1200 into 2 more sizes; medium with size 600 x 600 and small with size 300 x 300 and we stored them in their respective folders.
+
+In next video, we will display all products in view products page with their images as well.
+
+So stay tune for next video.
